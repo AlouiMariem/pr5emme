@@ -5,7 +5,7 @@ import { GestionDesComptesRoutingModule } from './gestion-des-comptes-routing.mo
 import { GestionDesComptesComponent } from './gestion-des-comptes.component';
 import { AdminComponent } from './admin/admin.component';
 import { ClientComponent } from './client/client.component';
-import { DeleteComptesComponent } from './admin/admin/delete-comptes/delete-comptes.component';
+import { DeleteComptesComponent } from './admin/delete-comptes/delete-comptes.component';
 import { ReadComptesComponent } from './admin/read-comptes/read-comptes.component';
 import { UpdateComptesComponent } from './client/update-comptes/update-comptes.component';
 import { CreateComptesComponent } from './client/create-comptes/create-comptes.component';
