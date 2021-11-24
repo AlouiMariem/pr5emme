@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { GestionDesComptesRoutingModule } from './gestion-des-comptes-routing.module';
 import { GestionDesComptesComponent } from './gestion-des-comptes.component';
@@ -23,7 +24,8 @@ import { CreateComptesComponent } from './client/create-comptes/create-comptes.c
   ],
   imports: [
     CommonModule,
-    GestionDesComptesRoutingModule
+    GestionDesComptesRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class GestionDesComptesModule { }
