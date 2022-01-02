@@ -1,12 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": "8f692d50-5838-494a-80bb-b0b0b9e6e507"
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "frontend": {
+    "Angular13JwtAuth": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/frontend",
+            "outputPath": "dist/Angular13JwtAuth",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -30,16 +27,9 @@
               "src/assets"
             ],
             "styles": [
-
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-
-            "scripts": [
-              "./node_modules/popper.js/dist/umd/popper.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
-
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -78,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "frontend:build:production"
+              "browserTarget": "Angular13JwtAuth:build:production"
             },
             "development": {
-              "browserTarget": "frontend:build:development"
+              "browserTarget": "Angular13JwtAuth:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "frontend:build"
+            "browserTarget": "Angular13JwtAuth:build"
           }
         },
         "test": {
@@ -104,18 +94,13 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "./node_modules/popper.js/dist/umd/popper.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
-
-            ]
+            "scripts": []
           }
         }
       }
     }
   },
-  "defaultProject": "frontend"
+  "defaultProject": "Angular13JwtAuth"
 }

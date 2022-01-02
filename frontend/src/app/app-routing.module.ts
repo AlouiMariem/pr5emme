@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {CreateComptesComponent} from "./gestion-des-comptes/client/create-comptes/create-comptes.component"
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-const routes: Routes = [
-  { path: 'path', loadChildren: () => import('./gestion-des-comptes/gestion-des-comptes.module').then(m => m.GestionDesComptesModule) },
-  { path: 'path', loadChildren: () => import('./buy/buy.module').then(m => m.BuyModule) }, 
-  { path: 'path', loadChildren: () => import('./buy/buy.module').then(m => m.BuyModule) },
-  { path: 'signUp', component: CreateComptesComponent },
-  { path: 'Home', component: HomeComponent},
-  { path: 'login', component: LoginComponent}
-];
 
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BoardUserComponent } from './board-user/board-user.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
+
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'user', component: BoardUserComponent },
+  { path: 'admin', component: BoardAdminComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
