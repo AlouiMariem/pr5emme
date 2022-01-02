@@ -1,21 +1,24 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const cors = require("cors");
-const dbConfig = require("./config/db.config");
+const dbConfig = require("./app/config/db.config");
+const fileUpload = require('express-fileupload');
 
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:4200"
 };
 
 app.use(cors(corsOptions));
 
-app.use(bodyParser.json());
+app.use(express.json());
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
-const db = require("./models");
+app.use(fileUpload());
+
+
+const db = require("./app/models");
 const Role = db.role;
 
 db.mongoose
@@ -33,12 +36,13 @@ db.mongoose
   });
 
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to post office application application." });
+  res.json({ message: "Welcome to bezkoder application." });
 });
 
-require("./routes/auth.routes")(app);
-require("./routes/user.routes")(app);
-
+require("./app/routes/auth.routes")(app);
+require("./app/routes/user.routes")(app);
+require("./app/routes/tag.routes")(app);
+require("./app/routes/item.routes")(app);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
@@ -56,16 +60,6 @@ function initial() {
         }
 
         console.log("added 'user' to roles collection");
-      });
-
-      new Role({
-        name: "moderator"
-      }).save(err => {
-        if (err) {
-          console.log("error", err);
-        }
-
-        console.log("added 'moderator' to roles collection");
       });
 
       new Role({
