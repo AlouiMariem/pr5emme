@@ -51,14 +51,14 @@ exports.createItem = (req, res) => {
 exports.getAllItems = (req, res) => {
   Item.find()
     .populate("tags", "-__v")
-    .exec((err, users) => {
+    .exec((err, items) => {
       if (err) {
         res.status(500).send({ message: err });
         return;
       }
 
       res.status(200).send({
-        users: users
+        items: items
       });
     });
 };

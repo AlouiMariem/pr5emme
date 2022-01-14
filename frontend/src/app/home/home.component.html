@@ -1,5 +1,24 @@
 <div class="container">
   <header class="jumbotron">
-    <p>{{ content }}</p>
+    <p>list of products</p>
   </header>
+
+  <div *ngFor="let item of content">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://lallahoriye.com/wp-content/uploads/2019/04/Product_Lg_Type-555x429.jpg"
+        alt={{item[4]}}>
+      <div class="card-body">
+        <h5 class="card-title">{{item[0]}}</h5>
+        <p class="card-text">{{item[3]}}</p>
+        <div class="d-flex flex-row" *ngFor="let initem of item[2]">
+          <div style="border: solid 2px red; border-radius: 25px; margin: 5px;" class="p-2">{{ initem}}</div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
 </div>
