@@ -14,7 +14,7 @@ export class BoardAdminComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getAdminBoard().subscribe({
       next: data => {
-        this.content = data;
+        this.content =data.users.map((el:any)=>{return [el.username,el.email,el.roles.map((elitem:any)=>{return elitem.name})]});
       },
       error: err => {
         this.content = JSON.parse(err.error).message;

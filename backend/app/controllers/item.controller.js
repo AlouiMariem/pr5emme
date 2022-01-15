@@ -9,10 +9,11 @@ exports.createItem = (req, res) => {
     const item = new Item({
         title: req.body.title,
         discription: req.body.discription,
-        image: t+req.files.image.name,
+        image: "t+req.files.image.name",
         initialPrice: req.body.initialPrice,
         author: req.body.author,
-        tags: req.body.tags.split(','),
+        // tags: req.body.tags.split(','),
+        tags: [],
         openAt:new Date( req.body.openAt),
         closeAt: new Date(req.body.closeAt)
     })
@@ -38,12 +39,12 @@ exports.createItem = (req, res) => {
             return;
         }
         itemId=room.id
-        req.body.tags.split(',').forEach(el => {
-            Tag.findByIdAndUpdate(el,{$push: {"items": itemId}},{safe: true, upsert: true},
-            function(err, model) {
-                console.log(err);
-            })
-        });
+        // req.body.tags.split(',').forEach(el => {
+        //     Tag.findByIdAndUpdate(el,{$push: {"items": itemId}},{safe: true, upsert: true},
+        //     function(err, model) {
+        //         console.log(err);
+        //     })
+        // });
         res.send({ message: "item was registered successfully!"+itemId });
     })
 }

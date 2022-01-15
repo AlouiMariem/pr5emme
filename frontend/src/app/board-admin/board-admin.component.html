@@ -1,42 +1,32 @@
-<table class="table" >
+<header>
+  <p>{{ content }}</p>
+</header>
+<table class="table">
   <thead>
-      <tr>
-
-          <th>username</th>
-          <th>email</th>
-
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-
-          <td>mouhab</td>
-          <td>mouhab@gmail.com</td>
-
-
-      </tr>
-      <tr>
-
-        <td>ranya</td>
-        <td>ranya@gmail.com</td>
-
-
-    </tr>
     <tr>
 
-      <td>mariem</td>
-      <td>mariem@gmail.com</td>
+      <th>username</th>
+      <th>email</th>
+      <th>roles</th>
+      <th>actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of content">
+
+      <td>{{item[0]}}</td>
+      <td>{{item[1]}}</td>
+      <td>{{item[2]}}</td>
+      <td>
+        <button style="margin: 5px;" type="button" class="btn btn-danger">delete</button>
+        <button style="margin: 5px;" type="button" class="btn btn-primary">update</button>
+        <button style="margin: 5px;" type="button" class="btn btn-success">details</button>
 
 
-  </tr>
-  <tr>
 
-    <td>imen</td>
-    <td>imen@gmail.com</td>
+      </td>
+    </tr>
 
-
-</tr>
   </tbody>
 </table>
-
-

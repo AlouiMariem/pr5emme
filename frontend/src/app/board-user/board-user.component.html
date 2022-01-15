@@ -1,34 +1,46 @@
 <div class="container">
-  <header >
+  <header>
     <p>{{ content }}</p>
   </header>
 
 </div>
 <div class="form-style-5">
-  <form>
-  <fieldset>
-  <legend><span class="number">*</span> Add Product</legend>
-  <input type="text" name="field1" placeholder="Title *">
-  <textarea name="field2" placeholder="discription"></textarea>
-  
-  <input type="number" name="field4" placeholder="Price *">
-  <div>
-    <label for="bday">OpenAt :</label>
-    <input type="date" id="bday" name="bday" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
-    <span class="validity"></span>
-  </div>
-  <div>
-    <label for="bday">CloseAt :</label>
-    <input type="date" id="bday" name="bday" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
-    <span class="validity"></span>
-  </div>
-  
-  <label for="avatar">Choose image :</label>
-  
-  <input type="file" name="field3" placeholder="Image *">
-  <br>
-  </fieldset>
-  <br>
-  <input type="submit" value="Add" />
+
+
+  <form name="form" (ngSubmit)=" onSubmit()" #f="ngForm">
+    <div class="form-group">
+      <label for="title">title</label>
+      <input type="text" class="form-control" name="title" [(ngModel)]="form.title"  #title="ngModel" />
+    </div>
+    <div class="form-group">
+      <label for="author">author</label>
+      <input type="text"  value="1111111"  class="form-control" name="author"  [(ngModel)]="form.author"  #author="ngModel" />
+    </div>
+    <div class="form-group">
+      <label for="discription">discription</label>
+      <input type="text" class="form-control" name="discription" [(ngModel)]="form.discription"  #discription="ngModel" />
+    </div>
+    <div class="form-group">
+      <label for="image">image</label>
+      <input type="file" class="form-control" name="image" [(ngModel)]="form.image"  #image="ngModel" />
+    </div>
+    <div class="form-group">
+      <label for="initialPrice">initialPrice</label>
+      <input type="text" class="form-control" name="initialPrice" [(ngModel)]="form.initialPrice"  #initialPrice="ngModel" />
+    </div>
+    <div class="form-group">
+      <label for="openAt">openAt</label>
+      <input type="date" class="form-control" name="openAt" [(ngModel)]="form.openAt"  #openAt="ngModel" />
+    </div>
+    <div class="form-group">
+      <label for="closeAt">closeAt</label>
+      <input type="date" class="form-control" name="closeAt" [(ngModel)]="form.closeAt"  #closeAt="ngModel" />
+    </div>
+    
+    <div class="form-group">
+      <button class="btn btn-primary btn-block">add item</button>
+    </div>
+
+    
   </form>
-  </div>
+</div>
