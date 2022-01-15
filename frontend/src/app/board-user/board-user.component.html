@@ -5,6 +5,7 @@
 
 </div>
 <div class="form-style-5">
+<<<<<<< HEAD
 
 
   <form name="form" (ngSubmit)=" onSubmit()" #f="ngForm">
@@ -42,5 +43,32 @@
     </div>
 
     
+=======
+  <form>
+  <fieldset>
+  <legend><span class="number">*</span> Add Product</legend>
+  <input type="text" name="field1" placeholder="Title *">
+  <textarea name="field2" placeholder="discription"></textarea>
+  
+  <input type="number" name="field4" placeholder="Price DT *">
+  <div>
+    <label for="bday">OpenAt :</label>
+    <input type="date" id="bday" name="bday" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+    <span class="validity"></span>
+  </div>
+  <div>
+    <label for="bday">CloseAt :</label>
+    <input type="date" id="bday" name="bday" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+    <span class="validity"></span>
+  </div>
+  
+  <label for="avatar">Choose image :</label>
+  
+  <input type="file" name="field3" placeholder="Image *">
+  <br>
+  </fieldset>
+  <br>
+  <input type="submit" value="Add" />
+>>>>>>> 766a372d77f6a4463c056336dfa492a6a1891fee
   </form>
 </div>
